@@ -15,7 +15,7 @@ fun Nose(
     innerShadowColor: Color
 ) {
 
-    val shadowRadius = size * 1.1F
+    val shadowRadius = size * 1.05F
 
     Box(
         modifier = Modifier

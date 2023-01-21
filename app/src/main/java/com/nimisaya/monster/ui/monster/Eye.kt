@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -23,8 +24,8 @@ fun Eye(
     eyeOutlineColor: Color = Color(0xFF020952),
     bodyColor: Color = Color(0xff020c68),
     pupilColor: Color = Color.White,
-    height: Int = 40,
-    width: Int = 30
+    height: Int = with(LocalDensity.current) { 40.dp.toPx() }.toInt(),
+    width: Int = with(LocalDensity.current) { 30.dp.toPx() }.toInt(),
 ) {
     val pupilHeight = height * 0.2F
     val pupilWidth = width / 6
@@ -115,7 +116,7 @@ private fun DrawScope.eyeSocket(
                 bodyColor
             )
         ),
-        size = Size(width = (width + 1).dp.toPx(), height = (height + 3).dp.toPx()),
+        size = Size(width = (width * 1.05).dp.toPx(), height = (height * 1.05).dp.toPx()),
         alpha = 0.25f,
         topLeft = Offset(x = this.size.width * 0f, y = this.size.height * .08f)
     )
@@ -123,29 +124,29 @@ private fun DrawScope.eyeSocket(
     drawOval(
         brush = Brush.horizontalGradient(
             colors = listOf(
-                bodyColor,
+                Color.Transparent,
                 eyeColor,
                 eyeColor,
-                bodyColor
+                Color.Transparent
             )
         ),
-        size = Size(width = (width + 2).dp.toPx(), height = (height + 1).dp.toPx()),
+        size = Size(width = (width * 1.05).dp.toPx(), height = (height * 1.009).dp.toPx()),
         topLeft = Offset(x = this.size.width * 0f, y = this.size.height * .08f),
-        style = Stroke(width = 1f, cap = StrokeCap.Round)
+        style = Stroke(width = (width * 0.01).dp.toPx(), cap = StrokeCap.Round)
     )
     // Outline - outer
     drawOval(
         brush = Brush.horizontalGradient(
             colors = listOf(
-                bodyColor,
+                Color.Transparent,
                 eyeColor,
                 eyeColor,
-                bodyColor
+                Color.Transparent
             )
         ),
-        size = Size(width = (width + 2).dp.toPx(), height = (height + 3).dp.toPx()),
+        size = Size(width = (width * 1.05).dp.toPx(), height = (height * 1.05).dp.toPx()),
         topLeft = Offset(x = this.size.width * 0f, y = this.size.height * .08f),
-        style = Stroke(width = 1f, cap = StrokeCap.Round)
+        style = Stroke(width = (width * 0.01).dp.toPx(), cap = StrokeCap.Round)
     )
 }
 

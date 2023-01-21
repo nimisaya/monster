@@ -46,7 +46,7 @@ class NoseShape(
         val noseSidePaths = Path.combine(operation = PathOperation.Union, noseLeftPath, noseRightPath)
         val path = Path.combine(operation = PathOperation.Union, noseSidePaths, noseTopPath)
 
-       path.translate(offset = Offset(x = radius * 0.25f, y = -(radius * 0.5f)))
+       path.translate(offset = Offset(x = radius, y = -(radius * 0.5f)))
 
         return Outline.Generic(path)
     }

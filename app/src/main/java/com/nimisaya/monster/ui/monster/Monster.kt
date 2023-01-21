@@ -12,14 +12,15 @@ import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-private fun Monster(
+fun Monster(
     modifier: Modifier = Modifier,
-    size: Int = 200,
-    bodyOutlineThickness: Float = 3F,
+    size: Int = with(LocalDensity.current) { 200.dp.toPx() }.toInt(),
+    strokeThickness: Float = with(LocalDensity.current) { 3.dp.toPx() },
     bodyColor: Color = Color(0xff25eb7d),
     eyeColor: Color = Color(0xff020c68),
     noseColor: Color = Color(0xff020c68),
@@ -31,9 +32,9 @@ private fun Monster(
     val eyeWidth = (eyeHeight / 1.2).toInt()
     val eyeGap = size / 5
 
-    val foreheadHeight = (size * 0.25).dp
+    val foreheadHeight = (size * 0.35).dp
 
-    val noseSize = size * 0.1F
+    val noseSize = size * 0.2F
 
     Box(
         modifier = modifier
@@ -41,7 +42,7 @@ private fun Monster(
             .drawBehind {
                 body(
                     color = bodyColor,
-                    outlineThickness = bodyOutlineThickness,
+                    outlineThickness = strokeThickness,
                     size = size,
                     outlineColor = outlineColor,
                     shadingColor = shadingColor
@@ -91,7 +92,7 @@ private fun DrawScope.body(
     drawCircle(
         brush = Brush.radialGradient(
             colorStops = arrayOf(
-                0.55f to color,
+                0.25f to color,
                 1f to shadingColor
             ),
             center = Offset(x = this.size.width * 0.5f, y = this.size.height * 0.65f)
