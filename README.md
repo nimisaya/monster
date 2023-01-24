@@ -4,5 +4,4 @@ Experimenting with graphics in Jetpack Compose with a Monster "illustration" ðŸ‘
 
 This is a `WIP`.
 
-![image](https://user-images.githubusercontent.com/7950697/214187159-438ee564-d5ee-4efb-aeca-46b96a36cdeb.png)
-
+![image](https://user-images.githubusercontent.com/7950697/214187668-98b6a77b-174b-4ff7-8d22-0e6420b0d87f.png)
