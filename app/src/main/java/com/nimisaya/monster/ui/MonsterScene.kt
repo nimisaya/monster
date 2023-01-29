@@ -21,10 +21,11 @@ fun MonsterScene(modifier: Modifier = Modifier) {
             modifier = Modifier.padding(48.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ){
+            AnimatedText()
             Spacer(modifier = Modifier.height(48.dp))
             Monster(
-                size = with(LocalDensity.current) { 150.dp.toPx() }.toInt(),
-                strokeThickness = with(LocalDensity.current) { 3.dp.toPx() }
+                size = with(LocalDensity.current) { 100.dp.toPx() }.toInt(),
+                strokeThickness = with(LocalDensity.current) { 2.5.dp.toPx() }
             )
         }
     }
