@@ -108,7 +108,7 @@ private fun DrawScope.body(
                 0.25f to color,
                 1f to shadingColor
             ),
-            center = Offset(x = this.size.width * 0.5f, y = this.size.height * 0.65f)
+            center = Offset(x = size * 1.2f, y = size * 1.9f)
         ),
         radius = size.toFloat(),
     )

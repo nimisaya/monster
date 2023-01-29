@@ -24,7 +24,7 @@ fun MonsterScene(modifier: Modifier = Modifier) {
             AnimatedText()
             Spacer(modifier = Modifier.height(48.dp))
             Monster(
-                size = with(LocalDensity.current) { 100.dp.toPx() }.toInt(),
+                size = with(LocalDensity.current) { 120.dp.toPx() }.toInt(),
                 strokeThickness = with(LocalDensity.current) { 2.5.dp.toPx() }
             )
         }
