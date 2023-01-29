@@ -6,7 +6,8 @@ It is not an example of best practices. I am just playing around and making up w
 
 ## Progress
 
-![image](https://user-images.githubusercontent.com/7950697/215315057-8ff4f4db-fe9d-44be-9bbc-9529966399a1.png)
+https://user-images.githubusercontent.com/7950697/215318175-dddbe9e5-f00f-4da2-9200-dd231ca6e5ce.mov
+
 
 
 ### Remaining tasks
