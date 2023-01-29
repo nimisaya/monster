@@ -31,16 +31,20 @@ fun Monster(
     eyeColor: Color = Color(0xff020c68),
     noseColor: Color = Color(0xff020c68),
     shadingColor: Color = Color(0xff179575),
-    outlineColor: Color = Color(0xFF020952)
+    outlineColor: Color = Color(0xFF020952),
+    mouthColor: Color = Color(0xFF020952)
 ) {
 
     val eyeHeight = size / 5
     val eyeWidth = (eyeHeight / 1.2).toInt()
-    val eyeGap = size / 5
+    val eyeGap = size * 0.05f
 
-    val foreheadHeight = (size * 0.35).dp
+    val foreheadHeight = (size * 0.25).dp
 
-    val noseSize = size * 0.2F
+    val noseSize = size * 0.1f
+
+    val mouthSize = (size * 0.1f).toInt()
+    val mouthGap = size * 0.08f
 
     Box(
         modifier = modifier
@@ -59,13 +63,20 @@ fun Monster(
         Box {
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Spacer(modifier = Modifier.height(foreheadHeight))
-                Row {
+                Row(verticalAlignment = Alignment.Bottom) {
                     Eye(
                         eyeColor = eyeColor,
                         eyeOutlineColor = outlineColor,
                         bodyColor = bodyColor,
                         height = eyeHeight,
                         width = eyeWidth
+                    )
+                    Spacer(modifier = Modifier.width(eyeGap.dp))
+                    Nose(
+                        size = noseSize,
+                        outerShadowColor = bodyColor,
+                        fillColor = noseColor,
+                        innerShadowColor = shadingColor
                     )
                     Spacer(modifier = Modifier.width(eyeGap.dp))
                     Eye(
@@ -76,12 +87,8 @@ fun Monster(
                         width = eyeWidth
                     )
                 }
-                Nose(
-                    size = noseSize,
-                    outerShadowColor = bodyColor,
-                    fillColor = noseColor,
-                    innerShadowColor = shadingColor
-                )
+                Spacer(modifier = Modifier.height(mouthGap.dp))
+                Mouth(mouthSize = mouthSize, color = mouthColor, shadowColor = shadingColor)
             }
         }
     }

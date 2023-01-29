@@ -23,7 +23,7 @@ fun Nose(
                 lightColor = innerShadowColor
             )
             .drawNose(
-                radius = size * 0.95F,
+                radius = size * 0.96F,
                 color = fillColor
             )
     ) {}
