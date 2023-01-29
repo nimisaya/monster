@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun Monster(
     modifier: Modifier = Modifier,
-    size: Int = with(LocalDensity.current) { 200.dp.toPx() }.toInt(),
+    size: Int = with(LocalDensity.current) { 150.dp.toPx() }.toInt(),
     strokeThickness: Float = with(LocalDensity.current) { 3.dp.toPx() },
     bodyColor: Color = Color(0xff25eb7d),
     eyeColor: Color = Color(0xff020c68),
