@@ -1,7 +1,9 @@
 # Monster
 
-Experimenting with graphics in Jetpack Compose with a Monster "illustration" 👾
+`Monster` is an opportunity to play around and experiment with graphics in Jetpack Compose by creating a monster "illustration" 👾.
 
-This is a `WIP`.
+## Remaining tasks
 
-![image](https://user-images.githubusercontent.com/7950697/214187668-98b6a77b-174b-4ff7-8d22-0e6420b0d87f.png)
+[] Add a mouth
+[] Add either a body or wings
+[] Clean up the code
