@@ -24,21 +24,26 @@ class NoseShape(
         density: Density
     ): Outline {
         val noseTopPath = Path().apply {
-            addOval(oval = Rect(center = Offset(x = radius * 0.5f, y = 0f), radius = radius * 0.45f))
+            addOval(
+                oval = Rect(
+                    center = Offset(x = radius + radius * 0.5f, y = radius),
+                    radius = radius
+                )
+            )
         }
         val noseRightPath = Path().apply {
             addOval(
                 oval = Rect(
-                    center = Offset(x = radius * 0.75f, y = radius * 0.5f),
-                    radius = radius * 0.5f
+                    center = Offset(x = radius, y = radius + radius * 0.5f),
+                    radius = radius * 0.85f
                 )
             )
         }
         val noseLeftPath = Path().apply {
             addOval(
                 oval = Rect(
-                    center = Offset(x = radius * 0.25f, y = radius * 0.5f),
-                    radius = radius * 0.5f
+                    center = Offset(x = radius * 2f, y = radius + radius * 0.5f),
+                    radius = radius * 0.85f
                 )
             )
         }
@@ -46,7 +51,7 @@ class NoseShape(
         val noseSidePaths = Path.combine(operation = PathOperation.Union, noseLeftPath, noseRightPath)
         val path = Path.combine(operation = PathOperation.Union, noseSidePaths, noseTopPath)
 
-       path.translate(offset = Offset(x = radius, y = -(radius * 0.5f)))
+       path.translate(offset = Offset(x = 0f, y = radius * 1.5f))
 
         return Outline.Generic(path)
     }
@@ -83,7 +88,7 @@ fun Modifier.drawNoseShadow(
     )
 )
 
-@Preview(widthDp = 400, heightDp = 200)
+@Preview
 @Composable
 private fun NoseShapePreview() {
     Box(
@@ -94,6 +99,5 @@ private fun NoseShapePreview() {
                 radius = 200F,
                 color = Color.Black,
             )
-    ) {
-    }
+    ) {}
 }
