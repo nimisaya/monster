@@ -6,8 +6,8 @@ It is not an example of best practices. I am just playing around and making up w
 
 ## Progress
 
-https://user-images.githubusercontent.com/7950697/215318175-dddbe9e5-f00f-4da2-9200-dd231ca6e5ce.mov
 
+https://user-images.githubusercontent.com/7950697/215318967-2eea52bb-266f-4bfc-a668-b3ccdd0683c8.mov
 
 
 ### Remaining tasks
