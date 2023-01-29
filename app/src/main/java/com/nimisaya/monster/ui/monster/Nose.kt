@@ -14,22 +14,17 @@ fun Nose(
     outerShadowColor: Color,
     innerShadowColor: Color
 ) {
-
-    val shadowRadius = size * 1.05F
-
     Box(
         modifier = Modifier
             .size(size.dp)
             .drawNoseShadow(
-                radius = shadowRadius,
+                radius = size,
                 darkColor = outerShadowColor,
                 lightColor = innerShadowColor
             )
             .drawNose(
-                radius = size,
+                radius = size * 0.95F,
                 color = fillColor
             )
-    ) {
-    }
+    ) {}
 }
-
