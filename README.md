@@ -12,6 +12,6 @@ https://user-images.githubusercontent.com/7950697/215318967-2eea52bb-266f-4bfc-a
 
 ### Remaining tasks
 
-- [ ] Fix colour of mouth and teeth, use gradients
+- [ ] Fix colouring and tweak sizing of mouth and teeth
 - [ ] Add either a body or wings
 - [ ] Clean up the code
